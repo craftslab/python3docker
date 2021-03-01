@@ -17,9 +17,6 @@ RUN apt update -y > /dev/null && \
     apt install -y openjdk-8-jdk openjdk-8-jdk-headless && \
     apt install -y openssh-client openssh-server && \
     apt install -y python3 python3-dev python3-pip python3-venv && \
-    apt install -y python3.7 python3.7-dev && \
-    apt install -y python3.8 python3.8-dev && \
-    apt install -y python3.9 python3.9-dev && \
     apt install -y sudo unzip vim wget xz-utils zip
 RUN apt autoremove --purge -y > /dev/null && \
     apt autoclean -y > /dev/null && \
