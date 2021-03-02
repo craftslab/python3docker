@@ -13,7 +13,7 @@ RUN apt update -y > /dev/null && \
     add-apt-repository -y ppa:deadsnakes/ppa && \
     apt update -y > /dev/null && \
     apt install -y bzip2 ca-certificates curl git gnupg && \
-    apt install -y lib32stdc++6 libglib2.0-0 libsm6 libxext6 libxrender1 && \
+    apt install -y lib32stdc++6 libglib2.0-0 libmysqlclient-dev libsm6 libxext6 libxrender1 && \
     apt install -y openjdk-8-jdk openjdk-8-jdk-headless && \
     apt install -y openssh-client openssh-server && \
     apt install -y python3 python3-dev python3-pip python3-venv && \
@@ -23,7 +23,8 @@ RUN apt autoremove --purge -y > /dev/null && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/log/* && \
     rm -rf /tmp/*
-RUN pip3 install matplotlib numpy openpyxl pandas pyyaml scikit-learn scipy suds-py3 sympy xlrd
+RUN pip3 install matplotlib mysql numpy openpyxl pandas pyyaml && \
+    pip3 scikit-learn scipy suds-py3 sympy xlrd
 RUN echo "alias pip=pip3" | tee --append /etc/bash.bashrc && \
     echo "alias python=python3" | tee --append /etc/bash.bashrc && \
     echo "StrictHostKeyChecking no" | tee --append /etc/ssh/ssh_config && \
