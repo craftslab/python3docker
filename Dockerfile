@@ -23,7 +23,7 @@ RUN apt autoremove --purge -y > /dev/null && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/log/* && \
     rm -rf /tmp/*
-RUN pip3 install matplotlib numpy pandas pyyaml scikit-learn scipy suds-py3 sympy xlrd
+RUN pip3 install matplotlib numpy openpyxl pandas pyyaml scikit-learn scipy suds-py3 sympy xlrd
 RUN echo "alias pip=pip3" | tee --append /etc/bash.bashrc && \
     echo "alias python=python3" | tee --append /etc/bash.bashrc && \
     echo "StrictHostKeyChecking no" | tee --append /etc/ssh/ssh_config && \
