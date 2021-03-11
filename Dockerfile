@@ -24,8 +24,7 @@ RUN apt autoremove --purge -y > /dev/null && \
     rm -rf /var/log/* && \
     rm -rf /tmp/*
 RUN pip3 install jenkins jinja2 jira matplotlib mysql numpy openpyxl pandas pyyaml && \
-    pip3 install scikit-learn scipy suds-jurko suds-py3 sympy tqdm xlrd && \
-    pip3 install --upgrade --force-reinstall numpy
+    pip3 install scikit-learn scipy suds-jurko suds-py3 sympy tqdm xlrd
 RUN echo "alias pip=pip3" | tee --append /etc/bash.bashrc && \
     echo "alias python=python3" | tee --append /etc/bash.bashrc && \
     echo "StrictHostKeyChecking no" | tee --append /etc/ssh/ssh_config && \
