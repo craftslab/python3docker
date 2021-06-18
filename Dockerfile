@@ -24,7 +24,7 @@ RUN apt autoremove --purge -y > /dev/null && \
     rm -rf /var/log/* && \
     rm -rf /tmp/*
 RUN pip3 install jenkins jinja2 jira matplotlib mysql numpy openpyxl && \
-    pip3 install pandas python-jenkins pyyaml && \
+    pip3 install pandas python-jenkins pyyaml requests && \
     pip3 install scikit-learn scipy suds-jurko sympy tqdm xlrd xmltodict
 RUN echo "alias pip=pip3" | tee --append /etc/bash.bashrc && \
     echo "alias python=python3" | tee --append /etc/bash.bashrc && \
