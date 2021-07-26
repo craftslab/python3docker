@@ -25,7 +25,8 @@ RUN apt autoremove --purge -y > /dev/null && \
     rm -rf /tmp/*
 RUN pip3 install jenkins jinja2 jira matplotlib mysql numpy openpyxl && \
     pip3 install pandas python-jenkins pyyaml requests && \
-    pip3 install scikit-learn scipy suds-jurko sympy tqdm xlrd xmltodict
+    pip3 install scikit-learn scipy suds-jurko sympy && \
+    pip3 install tqdm xlrd xmltodict yattag
 RUN echo "alias pip=pip3" | tee --append /etc/bash.bashrc && \
     echo "alias python=python3" | tee --append /etc/bash.bashrc && \
     echo "StrictHostKeyChecking no" | tee --append /etc/ssh/ssh_config && \
