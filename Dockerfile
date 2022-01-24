@@ -12,7 +12,7 @@ RUN apt update -y > /dev/null && \
     apt install -y software-properties-common && \
     add-apt-repository -y ppa:deadsnakes/ppa && \
     apt update -y > /dev/null && \
-    apt install -y bzip2 ca-certificates curl expect git gnupg && \
+    apt install -y bzip2 ca-certificates curl expect ftp git gnupg && \
     apt install -y lib32stdc++6 libglib2.0-0 libmysqlclient-dev libsm6 libxext6 libxrender1 && \
     apt install -y openjdk-8-jdk openjdk-8-jdk-headless && \
     apt install -y openssh-client openssh-server && \
@@ -23,10 +23,11 @@ RUN apt autoremove --purge -y > /dev/null && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/log/* && \
     rm -rf /tmp/*
-RUN pip3 install jenkins jinja2 jira matplotlib mysql numpy openpyxl && \
-    pip3 install pandas python-jenkins pyyaml requests && \
-    pip3 install scikit-learn scipy suds-jurko sympy && \
-    pip3 install tqdm xlrd xmltodict yattag
+RUN pip3 install beautifulsoup4 black colorama coverage coveralls flake8 hypothesis && \
+    pip3 install jenkins jinja2 jira matplotlib mypy mysql numpy openpyxl && \
+    pip3 install pandas pre-commit pytest python-jenkins pyyaml requests && \
+    pip3 install scikit-learn scipy setuptools suds-jurko sympy tqdm twine && \
+    pip3 install wheel xlrd xmltodict yattag
 RUN echo "alias pip=pip3" | tee --append /etc/bash.bashrc && \
     echo "alias python=python3" | tee --append /etc/bash.bashrc && \
     echo "StrictHostKeyChecking no" | tee --append /etc/ssh/ssh_config && \
